@@ -19,6 +19,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    container: artifactory.teslamotors.com:2046/ubuntu:20.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,4 +34,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
+          whoami
+          cat /etc/os-release
           echo test, and deploy your project.
